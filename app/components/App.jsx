@@ -1,5 +1,6 @@
 import React from 'react';
-import Calcul from './Calcul'
+import Calcul from './Calcul';
+import Conjugaison from './Conjugaison';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,13 +9,22 @@ export default class App extends React.Component {
       showCalcul: false,
       showConjugaison: false,
     }
-    this.handleCalculClick = this.handleCalculClick.bind(this);
+    this.calculClick = this.calculClick.bind(this);
+    this.conjugaisonClick = this.conjugaisonClick.bind(this);
   };
 
-  handleCalculClick(){
+  calculClick(){
     this.setState({
+      showConjugaison: false,
       showCalcul: true,
     });
+  }
+
+  conjugaisonClick(){
+    this.setState({
+      showCalcul: false,
+      showConjugaison: true,
+    })
   }
 
   render() {
@@ -22,8 +32,8 @@ export default class App extends React.Component {
       <div id="content">
         <nav>
           <ul>
-            <li><button onClick={this.handleCalculClick}> Calcul Mental </button></li>
-            <li><button> Conjugaison </button></li>
+            <li><button onClick={this.calculClick}> Calcul Mental </button></li>
+            <li><button onClick={this.conjugaisonClick}> Conjugaison </button></li>
           </ul>
         </nav>
         <div id="settings"> 
