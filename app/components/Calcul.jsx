@@ -9,7 +9,7 @@ export default class Calcul extends React.Component {
         <span>Opérations : </span>
         <label><input id="addition" value="addition" type="checkbox" />Addition</label>
         <label><input id="substraction" value="substraction" type="checkbox" />Soustraction</label>
-        <button type="submit" id="generate">Lancer</button>
+        <button id="generate">Lancer</button>
       </form>
     )
   }
