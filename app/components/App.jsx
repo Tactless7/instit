@@ -9,7 +9,7 @@ export default class App extends React.Component {
       showCalcul: false,
       showConjugaison: false,
     }
-    
+
     this.calculClick = this.calculClick.bind(this);
     this.conjugaisonClick = this.conjugaisonClick.bind(this);
   };
