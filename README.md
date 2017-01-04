@@ -1,3 +1,5 @@
+# instit
+
 # Brunch + React + Babel/ES6
 
 This is a modern JS skeleton with React for [Brunch](http://brunch.io).
@@ -19,3 +21,4 @@ Clone this repo manually or use `brunch new dir -s brunch/with-react`
     * `public/` dir is fully auto-generated and served by HTTP server.  Write your code in `app/` dir.
     * Place static files you want to be copied from `app/assets/` to `public/`.
     * [Brunch site](http://brunch.io), [Getting started guide](https://github.com/brunch/brunch-guide#readme)
+
