@@ -10,7 +10,7 @@ module.exports = {
   },
 
   paths: {
-    public: './../docs'
+    public: './docs',
   },
 
   plugins: {

@@ -150,6 +150,117 @@ var __makeRelativeRequire = function(require, mappings, pref) {
   }
 };
 require.register("components/App.jsx", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _Calcul = require('./Calcul');
+
+var _Calcul2 = _interopRequireDefault(_Calcul);
+
+var _Conjugaison = require('./Conjugaison');
+
+var _Conjugaison2 = _interopRequireDefault(_Conjugaison);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var App = function (_React$Component) {
+  _inherits(App, _React$Component);
+
+  function App(props) {
+    _classCallCheck(this, App);
+
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
+
+    _this.state = {
+      showCalcul: false,
+      showConjugaison: false
+    };
+
+    _this.calculClick = _this.calculClick.bind(_this);
+    _this.conjugaisonClick = _this.conjugaisonClick.bind(_this);
+    return _this;
+  }
+
+  _createClass(App, [{
+    key: 'calculClick',
+    value: function calculClick() {
+      this.setState({
+        showConjugaison: false,
+        showCalcul: true
+      });
+    }
+  }, {
+    key: 'conjugaisonClick',
+    value: function conjugaisonClick() {
+      this.setState({
+        showCalcul: false,
+        showConjugaison: true
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { id: 'content' },
+        _react2.default.createElement(
+          'nav',
+          null,
+          _react2.default.createElement(
+            'ul',
+            null,
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'button',
+                { onClick: this.calculClick },
+                ' Calcul Mental '
+              )
+            ),
+            _react2.default.createElement(
+              'li',
+              null,
+              _react2.default.createElement(
+                'button',
+                { onClick: this.conjugaisonClick },
+                ' Conjugaison '
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { id: 'settings' },
+          this.state.showCalcul ? _react2.default.createElement(_Calcul2.default, null) : null,
+          this.state.showConjugaison ? _react2.default.createElement(_Conjugaison2.default, null) : null
+        )
+      );
+    }
+  }]);
+
+  return App;
+}(_react2.default.Component);
+
+exports.default = App;
+});
+
+;require.register("components/Calcul.jsx", function(exports, require, module) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -170,61 +281,110 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var App = function (_React$Component) {
-  _inherits(App, _React$Component);
+var Calcul = function (_React$Component) {
+  _inherits(Calcul, _React$Component);
 
-  function App() {
-    _classCallCheck(this, App);
+  function Calcul() {
+    _classCallCheck(this, Calcul);
 
-    return _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Calcul.__proto__ || Object.getPrototypeOf(Calcul)).apply(this, arguments));
   }
 
-  _createClass(App, [{
+  _createClass(Calcul, [{
     key: "render",
     value: function render() {
       return _react2.default.createElement(
-        "div",
-        { id: "content" },
+        "form",
+        null,
         _react2.default.createElement(
-          "h1",
-          null,
-          "\xA0"
+          "label",
+          { htmlFor: "seriesNumber" },
+          "Nombre de s\xE9ries : ",
+          _react2.default.createElement("input", { name: "seriesNumber", id: "seriesNumber", type: "number" })
         ),
         _react2.default.createElement(
-          "h2",
-          null,
-          "Welcome!"
+          "label",
+          { htmlFor: "calculNumber" },
+          "S\xE9ries de :",
+          _react2.default.createElement("input", { name: "calculNumber", id: "calculNumber", type: "number" })
         ),
         _react2.default.createElement(
-          "ul",
+          "span",
           null,
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "http://brunch.io" },
-              "Brunch homepage"
-            )
-          ),
-          _react2.default.createElement(
-            "li",
-            null,
-            _react2.default.createElement(
-              "a",
-              { href: "https://facebook.github.io/react/" },
-              "React.js homepage"
-            )
-          )
+          "Op\xE9rations : "
+        ),
+        _react2.default.createElement(
+          "label",
+          null,
+          _react2.default.createElement("input", { id: "addition", value: "addition", type: "checkbox" }),
+          "Addition"
+        ),
+        _react2.default.createElement(
+          "label",
+          null,
+          _react2.default.createElement("input", { id: "substraction", value: "substraction", type: "checkbox" }),
+          "Soustraction"
+        ),
+        _react2.default.createElement(
+          "button",
+          { id: "generate" },
+          "Lancer"
         )
       );
     }
   }]);
 
-  return App;
+  return Calcul;
 }(_react2.default.Component);
 
-exports.default = App;
+exports.default = Calcul;
+});
+
+;require.register("components/Conjugaison.jsx", function(exports, require, module) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Conjugaison = function (_React$Component) {
+	_inherits(Conjugaison, _React$Component);
+
+	function Conjugaison() {
+		_classCallCheck(this, Conjugaison);
+
+		return _possibleConstructorReturn(this, (Conjugaison.__proto__ || Object.getPrototypeOf(Conjugaison)).apply(this, arguments));
+	}
+
+	_createClass(Conjugaison, [{
+		key: 'render',
+		value: function render() {
+			return _react2.default.createElement(
+				'h2',
+				null,
+				' Working on Progress '
+			);
+		}
+	}]);
+
+	return Conjugaison;
+}(_react2.default.Component);
+
+exports.default = Conjugaison;
 });
 
 ;require.register("initialize.js", function(exports, require, module) {
@@ -243,6 +403,8 @@ var _App = require('components/App');
 var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import Calcul from 'components/Calcul';
 
 document.addEventListener('DOMContentLoaded', function () {
   _reactDom2.default.render(_react2.default.createElement(_App2.default, null), document.querySelector('#app'));
