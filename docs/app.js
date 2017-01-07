@@ -325,20 +325,30 @@ exports.default = Calcul;
 var SeriesNumber = function (_React$Component2) {
   _inherits(SeriesNumber, _React$Component2);
 
-  function SeriesNumber() {
+  function SeriesNumber(props) {
     _classCallCheck(this, SeriesNumber);
 
-    return _possibleConstructorReturn(this, (SeriesNumber.__proto__ || Object.getPrototypeOf(SeriesNumber)).apply(this, arguments));
+    var _this2 = _possibleConstructorReturn(this, (SeriesNumber.__proto__ || Object.getPrototypeOf(SeriesNumber)).call(this, props));
+
+    _this2.state = { value: 0 };
+
+    _this2.handleChange = _this2.handleChange.bind(_this2);
+    return _this2;
   }
 
   _createClass(SeriesNumber, [{
+    key: "handleChange",
+    value: function handleChange(event) {
+      this.setState({ value: event.target.value });
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "label",
         { htmlFor: "seriesNumber" },
-        "Nombre de s\xE9ries : ",
-        _react2.default.createElement("input", { name: "seriesNumber", id: "seriesNumber", type: "number" })
+        "Nombre de s\xE9ries :",
+        _react2.default.createElement("input", { name: "seriesNumber", id: "seriesNumber", type: "number", value: this.state.value, onChange: this.handleChange })
       );
     }
   }]);
