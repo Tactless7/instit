@@ -291,44 +291,27 @@ var Calcul = function (_React$Component) {
   }
 
   _createClass(Calcul, [{
+    key: "handleClickGenerate",
+    value: function handleClickGenerate() {}
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "form",
         null,
-        _react2.default.createElement(
-          "label",
-          { htmlFor: "seriesNumber" },
-          "Nombre de s\xE9ries : ",
-          _react2.default.createElement("input", { name: "seriesNumber", id: "seriesNumber", type: "number" })
-        ),
-        _react2.default.createElement(
-          "label",
-          { htmlFor: "calculNumber" },
-          "S\xE9ries de :",
-          _react2.default.createElement("input", { name: "calculNumber", id: "calculNumber", type: "number" })
-        ),
+        _react2.default.createElement(SeriesNumber, null),
+        _react2.default.createElement(CalculNumber, null),
         _react2.default.createElement(
           "span",
           null,
           "Op\xE9rations : "
         ),
-        _react2.default.createElement(
-          "label",
-          null,
-          _react2.default.createElement("input", { id: "addition", value: "addition", type: "checkbox" }),
-          "Addition"
-        ),
-        _react2.default.createElement(
-          "label",
-          null,
-          _react2.default.createElement("input", { id: "substraction", value: "substraction", type: "checkbox" }),
-          "Soustraction"
-        ),
+        _react2.default.createElement(Addition, null),
+        _react2.default.createElement(Substraction, null),
         _react2.default.createElement(
           "button",
-          { id: "generate" },
-          "Lancer"
+          { id: "generate", onClick: this.handleClickGenerate },
+          "G\xE9n\xE9rer des s\xE9ries"
         )
       );
     }
@@ -338,6 +321,102 @@ var Calcul = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Calcul;
+
+var SeriesNumber = function (_React$Component2) {
+  _inherits(SeriesNumber, _React$Component2);
+
+  function SeriesNumber() {
+    _classCallCheck(this, SeriesNumber);
+
+    return _possibleConstructorReturn(this, (SeriesNumber.__proto__ || Object.getPrototypeOf(SeriesNumber)).apply(this, arguments));
+  }
+
+  _createClass(SeriesNumber, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "label",
+        { htmlFor: "seriesNumber" },
+        "Nombre de s\xE9ries : ",
+        _react2.default.createElement("input", { name: "seriesNumber", id: "seriesNumber", type: "number" })
+      );
+    }
+  }]);
+
+  return SeriesNumber;
+}(_react2.default.Component);
+
+var CalculNumber = function (_React$Component3) {
+  _inherits(CalculNumber, _React$Component3);
+
+  function CalculNumber() {
+    _classCallCheck(this, CalculNumber);
+
+    return _possibleConstructorReturn(this, (CalculNumber.__proto__ || Object.getPrototypeOf(CalculNumber)).apply(this, arguments));
+  }
+
+  _createClass(CalculNumber, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "label",
+        { htmlFor: "calculNumber" },
+        "S\xE9ries de :",
+        _react2.default.createElement("input", { name: "calculNumber", id: "calculNumber", type: "number" })
+      );
+    }
+  }]);
+
+  return CalculNumber;
+}(_react2.default.Component);
+
+var Addition = function (_React$Component4) {
+  _inherits(Addition, _React$Component4);
+
+  function Addition() {
+    _classCallCheck(this, Addition);
+
+    return _possibleConstructorReturn(this, (Addition.__proto__ || Object.getPrototypeOf(Addition)).apply(this, arguments));
+  }
+
+  _createClass(Addition, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "label",
+        null,
+        _react2.default.createElement("input", { id: "addition", value: "addition", type: "checkbox" }),
+        "Addition"
+      );
+    }
+  }]);
+
+  return Addition;
+}(_react2.default.Component);
+
+var Substraction = function (_React$Component5) {
+  _inherits(Substraction, _React$Component5);
+
+  function Substraction() {
+    _classCallCheck(this, Substraction);
+
+    return _possibleConstructorReturn(this, (Substraction.__proto__ || Object.getPrototypeOf(Substraction)).apply(this, arguments));
+  }
+
+  _createClass(Substraction, [{
+    key: "render",
+    value: function render() {
+      return _react2.default.createElement(
+        "label",
+        null,
+        _react2.default.createElement("input", { id: "substraction", value: "substraction", type: "checkbox" }),
+        "Soustraction"
+      );
+    }
+  }]);
+
+  return Substraction;
+}(_react2.default.Component);
 });
 
 ;require.register("components/Conjugaison.jsx", function(exports, require, module) {
