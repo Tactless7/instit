@@ -87,9 +87,24 @@ class Addition extends React.Component {
 }
 
 class Substraction extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {checked: false};
+
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(){
+    if(this.state.checked){
+      this.setState({checked: false});
+    } else {
+      this.setState({checked: true});
+    }
+  }
+
   render(){
     return (
-      <label><input id="substraction" value="substraction" type="checkbox" />Soustraction</label>
+      <label><input id="substraction" value="substraction" type="checkbox" onChange={this.handleChange} />Soustraction</label>
     )
   }
 }
